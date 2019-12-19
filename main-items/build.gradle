@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+  
+
+    sourceSets {
+      // Encapsulates configurations for the main source set.
+      main {
+        // Changes the directory for Java sources. The default directory is
+        // 'src/main/java'.
+        java.srcDirs = ['java']
+
+        // When you list multiple directories, Gradle uses all of them to collect
+        // sources. You should avoid specifying a directory which is a parent to one
+        // or more other directories you specify.
+        res.srcDirs = ['res']
+
+        // For each source set, you can specify only one Android manifest.
+        // The following points Gradle to a different manifest for this source set.
+        manifest.srcFile 'AndroidManifest.xml'
+      }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+}
