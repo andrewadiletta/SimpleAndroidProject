@@ -5,9 +5,9 @@ The goal of this project is to allow a user to build android apps entirely witho
 
 First, make sure that the java elements are installed.
 
-  sudo apt-get install openjdk-8-jre-headless
-  sudo apt-get install openjdk-8-jdk-headless
-  java -version
+    sudo apt-get install openjdk-8-jre-headless
+    sudo apt-get install openjdk-8-jdk-headless
+    java -version
   
 If you installed it correctly, the java version should show. If you have a later version of java, there are sometimes compatibility issues. If you run into these, try reverting back to java 8.
 
@@ -18,19 +18,19 @@ Extract the downloaded package to somewhere in your home directory, and add the 
 
 Go to your ~/.bashrc and add at the end:
 
-  export PATH="~/path/to/download/tools/bin:$PATH"
-  export PATH="~/path/to/download/tools:$PATH"
-  export PATH="~/path/to/download/platform-tools:$PATH"
+    export PATH="~/path/to/download/tools/bin:$PATH"
+    export PATH="~/path/to/download/tools:$PATH"
+    export PATH="~/path/to/download/platform-tools:$PATH"
 
 restart your terminal
 
 Now, type:
 
-  android update sdk
+    android update sdk
   
 This will create a .android folder in your home directory. Navigate to the ~/.android folder, and add a new file called repositories.cfg
 
-  nano repositories.cfg
+    nano repositories.cfg
   
 I don't know why that is necessary, but for some reason the tools don't know to make that file on its' own.
 
@@ -42,36 +42,36 @@ Now, with the sdkmanager tools, install the latest
 
 You can list the available packages by typing:
 
-  sdkmanager --list
+    sdkmanager --list
 
 For me, I installed the latest packages with this command (**these SDK versions will work with this version on github!**)
 
-  sdkmanager "platform-tools" "platforms;android-29" "system-images;android-29;default;x86_64" "build-tools;29.0.2"
+    sdkmanager "platform-tools" "platforms;android-29" "system-images;android-29;default;x86_64" "build-tools;29.0.2"
   
 Now, we can make an emulator with the following command:
 
-  avdmanager create avd -n "buddy" -k "system-images;android-29;default;x86_64" --device "Nexus 6P"
+    avdmanager create avd -n "buddy" -k "system-images;android-29;default;x86_64" --device "Nexus 6P"
 
 Now, you have to go into your tools directory, and run the emulator program **directly** Running it from outside tools using the program name you added when you altered your $PATH variable **doesn't work!**
 
-  ./emulator -avd "buddy"
+    ./emulator -avd "buddy"
   
 If everything worked, you should see an emulator pop up. 
 
 Now, you can install gradle with the following command:
 
-  sudo apt-get install gradle
+    sudo apt-get install gradle
   
 Verify that gradle downloaded correctly
 
-  gradle -v
+    gradle -v
   
 Now, download this repository, and navigate to the root of this project, and type:
 
-  gradle assembleDebug
+    gradle assembleDebug
  
  This will build a .apk file. Install it using the following command:
  
-    adb install /path/to/project_root/main_items/build/outputs/apk/debug/main_items-debug.apk
+    adb install /path/to/project_root/main-items/build/outputs/apk/debug/main-items-debug.apk
  
   
