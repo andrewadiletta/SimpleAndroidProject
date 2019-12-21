@@ -1,6 +1,9 @@
 # SimpleAndroidProject
 Simpliest Possible Android App That Can Be Compiled From Command Line from Linux
 
+The walkthrough is available on youtube here:
+https://www.youtube.com/watch?v=mKvGe3ZV9g4
+
 The goal of this project is to allow a user to build android apps entirely without the use of the Android Studio IDE. In order to do so, a couple of things must be installed. 
 
 First, make sure that the java elements are installed.
