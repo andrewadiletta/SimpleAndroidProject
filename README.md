@@ -20,7 +20,7 @@ Go to your ~/.bashrc and add at the end:
 
     export PATH="~/path/to/download/tools/bin:$PATH"
     export PATH="~/path/to/download/tools:$PATH"
-    export PATH="~/path/to/download/platform-tools:$PATH"
+    
 
 restart your terminal
 
@@ -47,6 +47,10 @@ You can list the available packages by typing:
 For me, I installed the latest packages with this command (**these SDK versions will work with this version on github!**)
 
     sdkmanager "platform-tools" "platforms;android-29" "system-images;android-29;default;x86_64" "build-tools;29.0.2"
+    
+ Now, add platform-tools to your PATH in the .bashrc (it was just installed next to the tools directory)
+ 
+    export PATH="~/path/to/download/platform-tools:$PATH"
   
 Now, we can make an emulator with the following command:
 
