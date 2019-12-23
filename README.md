@@ -20,7 +20,7 @@ Then, check the java version with:
 
         java -version
   
-Someday, I hope Google makes Android-cli compatibile with Java 11.
+Someday, I hope Google makes Android-cli compatible with Java 11.
 
 Now, download the android command line interface tools from the android website:
 [Download page] https://developer.android.com/studio/index.html#downloads
