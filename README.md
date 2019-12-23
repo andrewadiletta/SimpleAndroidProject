@@ -11,8 +11,16 @@ First, make sure that the java elements are installed.
     sudo apt-get install openjdk-8-jre-headless
     sudo apt-get install openjdk-8-jdk-headless
     java -version
+    
+Note: If you already have java installed (you probably do), you will need to switch the version to java 8. To do, this, run the following command:
+
+        sudo update-alternatives --config java
+        
+Then, check the java version with:
+
+        java -version
   
-If you installed it correctly, the java version should show. If you have a later version of java, there are sometimes compatibility issues. If you run into these, try reverting back to java 8.
+Someday, I hope Google makes Android-cli compatibile with Java 11.
 
 Now, download the android command line interface tools from the android website:
 [Download page] https://developer.android.com/studio/index.html#downloads
