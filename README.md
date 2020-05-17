@@ -35,6 +35,20 @@ Go to your ~/.bashrc and add at the end:
 
 restart your terminal
 
+EDIT: Google got rid of this and made it slightly more complicated. The tool named *android* is no longer available. Instread, what you need to do is define an android home folder like this:
+
+    export ANDROID_HOME=$PWD/android-sdk-linux
+
+Then to enable:
+
+    yes | sdkmanager --sdk_root=${ANDROID_HOME} --licenses
+    
+Finally, to install packages:
+
+    android-sdk-linux/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} "platform-tools" "platforms;android-${ANDROID_COMPILE_SDK}" >/dev/null 
+    
+---- *Depreciated code*------
+
 Now, type:
 
     android update sdk
@@ -44,6 +58,8 @@ This will create a .android folder in your home directory. Navigate to the ~/.an
     nano repositories.cfg
   
 I don't know why that is necessary, but for some reason the tools don't know to make that file on its' own.
+
+---- *depreciated code*----
 
 Now, with the sdkmanager tools, install the latest
 * platform-tools (no version)
